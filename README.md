@@ -23,16 +23,16 @@ or you could install your system.
 
 post url
 
-    $ curl -d url="http://www.google.com" http://localhost:4006
-    http://localhost:4006/Xs12
+    $ curl --data-urlencode url="http://www.google.com" http://localhost:4006
+    http://localhost:4006/xs12
 
 redirect url
 
-    $ curl -L http://localhost:4006/Xs12
+    $ curl -L http://localhost:4006/xs12
 
 show url
 
-    $ curl http://localhost:4006/s/Xs12
+    $ curl http://localhost:4006/s/xs12
     http://www.google.com
 
 recursive access
