@@ -1,0 +1,60 @@
+body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    background-image: url("/img/old_mathematics.png");
+    background-repeat: repeat;
+
+    padding-bottom: 0;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.jumbotron p {
+    color: #555;
+    font-size: 18px;
+}
+
+.form-search {
+    padding: 12px 0;
+}
+
+#content {
+    padding: 30px 0;
+}
+
+.display-link {
+    padding: 15px 0;
+    font-size: 2.0rem;
+}
+
+.footer {
+    padding: 30px 0 0 0;
+
+    .container-fluid {
+        border-top: 1px solid #888;
+        text-align: left;
+        font-size: 12px;
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 20px;
+        margin-left: 20px;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 20px 0;
+        }
+
+        .pull-left {
+            text-align: left;
+        }
+
+        .pull-right {
+            text-align: right;
+        }
+    }
+}

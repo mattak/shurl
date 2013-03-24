@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Shurl</title>
+
+    <!-- bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-responsive.min.css" rel="stylesheet">
+
+    <!-- bootmetro -->
+    <link href="/css/bootmetro.css" rel="stylesheet">
+    <link href="/css/bootmetro-responsive.css" rel="stylesheet">
+    <link href="/css/bootmetro-icons.css" rel="stylesheet">
+    <link href="/css/bootmetro-ui-light.css" rel="stylesheet">
+    <link href="/css/metro-ui-light.css" rel="stylesheet">
+
+    <link href="/css/style.css" rel="stylesheet">
+
+    <!-- scirpt -->
+    <script src="/js/jquery-1.9.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn-shorten").click(function(){
+                url = $("#longurl").val();
+                url = encodeURI(url);
+                $.post("/", {url: url }, function(d) {
+                    console.log(d);
+                    $("#link-shorten").text(d).attr("href", d);
+                }, "text").error(function(){
+                    $(".alert").alert();
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div class="wrapper">
+<header id="hero" class="container">
+    <div class="jumbotron masthead"> 
+        <div class="container-fluid">
+            <h1>Shurl</h1>
+            <p>simple url shortener.</p>
+        </div>
+    </div>
+</header>
+
+<article class="container main">
+    <aside class="container-fluid">
+        <div class="alert" style="display: none">
+            <button type="button" class="close" data-dismiss="alert"></button>
+            <strong>Warning!</string>
+            post failed.
+        </div>
+
+        <div id="content">
+            <div class="display-link">
+                <a href="#" id="link-shorten">shorten url</a>
+            </div>
+
+            <div class="form-search">
+                <div class="input-append">
+                    <input id="longurl" type="text" placeholder="http://www.google.com" class="span8 search-query">
+                    <button id="btn-shorten" class="btn">
+                        shorten
+                    </button>
+                </div>
+            </form>
+        </div>
+    </aside>
+</article>
+
+<footer class="footer">
+    <div class="container" style="position: relative">
+        <div class="container-fluid">
+            <ul class="pull-left">
+                <li>Created by <a href="http://github.com/mattak">@mattak</a></li>
+                <li>Opend source at <a href="http://github.com/mattak/shurl">github.com/mattak/shurl</a></li>
+            </ul>
+
+            <ul class="pull-right">
+                <li>Created at 2013/03/24</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</div>
+</body>
+
+</html>

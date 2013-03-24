@@ -8,7 +8,7 @@ require 'shurl'
 shurl = Shurl::Model.new
 
 get '/' do
-  "please post url"
+  File.read(File.join('public', 'index.html'))
 end
 
 # show raw url
@@ -38,6 +38,7 @@ post '/' do
   if params[:url] == nil
     halt 400, "please specify url param"
   else 
+    puts "url:"+params[:url].to_s;
     short_url = shurl.find_or_create_url(request, params[:url])
     short_url
   end
